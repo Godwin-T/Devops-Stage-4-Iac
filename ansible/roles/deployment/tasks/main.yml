@@ -1,0 +1,9 @@
+- name: Clone application repository
+  git:
+    repo: "https://github.com/Godwin-T/DevOps-Stage-4.git"
+    dest: "/home/ubuntu/app"
+
+- name: Deploy application using Docker Compose
+  command: docker-compose up -d
+  args:
+    chdir: "/home/ubuntu/app"

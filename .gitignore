@@ -1,0 +1,5 @@
+.ansible/
+.vscode/
+*.terraform
+*.hcl
+terraform/inventory

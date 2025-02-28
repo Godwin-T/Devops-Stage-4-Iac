@@ -1,0 +1,6 @@
+- name: Configure Server and Deploy Application
+  hosts: webserver
+  become: yes
+  roles:
+    - dependencies
+    - deployment

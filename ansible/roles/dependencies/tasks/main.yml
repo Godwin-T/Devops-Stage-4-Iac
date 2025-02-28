@@ -1,0 +1,22 @@
+- name: Install dependencies
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: Install Docker
+  become: yes
+  apt:
+    name: docker.io
+    state: present
+
+- name: Install Docker Compose
+  become: yes
+  apt:
+    name: docker-compose
+    state: present
+    
+- name: Add user to Docker group
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes
